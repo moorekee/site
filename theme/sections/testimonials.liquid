@@ -1,0 +1,101 @@
+{% schema
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "What Our Customers Say"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Star Rating (1-5)",
+          "default": "5"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Testimonial Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+    <div class="testimonials-carousel">
+      {% for block in section.blocks %}
+        <div class="testimonial-card">
+          <div class="stars">
+            {% for i in (1..block.settings.rating) %}
+              ⭐
+            {% endfor %}
+          </div>
+          <p class="testimonial-text">{{ block.settings.content }}</p>
+          <p class="testimonial-author">— {{ block.settings.author }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #FFF5F7 0%, #FFEBF0 100%);
+  }
+
+  .testimonials-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(255, 20, 147, 0.1);
+    border-left: 5px solid #FF1493;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.2);
+  }
+
+  .stars {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .testimonial-author {
+    font-weight: bold;
+    color: #FF1493;
+  }
+</style>
