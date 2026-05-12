@@ -1,0 +1,144 @@
+{% schema
+{
+  "name": "Package Comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Compare Packages Side by Side"
+    }
+  ]
+}
+{% endschema %}
+
+<section id="comparison" class="comparison-section">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th>Deluxe</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-name">Lawn Signs</td>
+            <td>2</td>
+            <td>5</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Balloons</td>
+            <td>10</td>
+            <td>30</td>
+            <td>50+</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Personalization</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Color Themes</td>
+            <td>3</td>
+            <td>5</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Setup Help</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>Professional Setup</td>
+          </tr>
+          <tr>
+            <td class="feature-name">24-Hour Display</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Photo Props</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="feature-name">LED Lights</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Rush Delivery</td>
+            <td>+$25</td>
+            <td>+$15</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Price</td>
+            <td class="price-cell">$49.99</td>
+            <td class="price-cell">$99.99</td>
+            <td class="price-cell">$199.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .comparison-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #FFF5F7 0%, #FFEBF0 100%);
+  }
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.1);
+  }
+
+  .comparison-table th {
+    background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .comparison-table td {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #FFE5EC;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: #FFF0F5;
+  }
+
+  .feature-name {
+    text-align: left;
+    font-weight: 600;
+    color: #FF1493;
+  }
+
+  .price-cell {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+  }
+</style>
