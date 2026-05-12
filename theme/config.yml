@@ -1,0 +1,19 @@
+name: Birthday Lawn Celebration
+description: Festive birthday lawn decoration packages with customization
+theme_store_id: null
+theme_id: null
+
+presets:
+  Default:
+    colors:
+      primary: '#FF1493'
+      secondary: '#FFD700'
+      accent: '#FFFFFF'
+      text: '#333333'
+      background: '#FFF5F7'
+    typography:
+      heading_font: 'Fredoka One'
+      body_font: 'Poppins'
+    spacing:
+      section_padding: '60px'
+      container_width: '1200px'
